@@ -1,0 +1,22 @@
+{
+  "name": "symposium",
+  "version": "1.0.0",
+  "description": "Package json file for symposium",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "node-sass": "^4.11.0",
+    "uglifycss": "0.0.29"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass CSS/symposium.scss   CSS/main.css",
+    "minify": "uglifycss CSS/main.css > CSS/main.min.css",
+    "process": "npm run build-css && npm run minify"
+  },
+  "author": "Walter Cerna",
+  "license": "ISC"
+}
