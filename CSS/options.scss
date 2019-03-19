@@ -1,472 +1,472 @@
 // OPTIONS
 
 .background {
-    &-red {
-        background-color: $red;
-    }
+	&-red {
+		background-color: $red;
+	}
 
-    &-green {
-        background-color: $green;
-    }
+	&-green {
+		background-color: $green;
+	}
 
-    &-blue {
-        background-color: $blue;
-    }
+	&-blue {
+		background-color: $blue;
+	}
 
-    &-navy {
-        background-color: $navy;
-    }
+	&-navy {
+		background-color: $navy;
+	}
 
-    &-orange {
-        background-color: $orange;
-    }
+	&-orange {
+		background-color: $orange;
+	}
 
-    &-white {
-        background-color: $white;
-    }
+	&-white {
+		background-color: $white;
+	}
 
-    &-light-gray {
-        background-color: $white-smoke;
-    }
+	&-light-gray {
+		background-color: $white-smoke;
+	}
 
-    &-gray {
-        background-color: $gray;
-    }
+	&-gray {
+		background-color: $gray;
+	}
 
-    &-dark-gray {
-        background-color: $dark-gray;
-    }
+	&-dark-gray {
+		background-color: $dark-gray;
+	}
 
-    &-black {
-        background-color: $black;
-    }
+	&-black {
+		background-color: $black;
+	}
 
-    &-gray,
-    &-dark-gray,
-    &-black,
-    &-red,
-    &-green,
-    &-blue,
-    &-navy,
-    &-orange,
-    &-gradient-gray,
-    &-gradient-dark-gray,
-    &-gradient-black,
-    &-gradient-red,
-    &-gradient-green,
-    &-gradient-blue,
-    &-gradient-navy,
-    &-gradient-orange,
-    &-overlay {
-        color: $white;
-    }
+	&-gray,
+	&-dark-gray,
+	&-black,
+	&-red,
+	&-green,
+	&-blue,
+	&-navy,
+	&-orange,
+	&-gradient-gray,
+	&-gradient-dark-gray,
+	&-gradient-black,
+	&-gradient-red,
+	&-gradient-green,
+	&-gradient-blue,
+	&-gradient-navy,
+	&-gradient-orange,
+	&-overlay {
+		color: $white;
+	}
 
-    &-white,
-    &-light-gray,
-    &-gradient-white,
-    &-gradient-light-gray {
-        color: $black;
-    }
+	&-white,
+	&-light-gray,
+	&-gradient-white,
+	&-gradient-light-gray {
+		color: $black;
+	}
 
-    &-image {
-        .responsive-photo{
-            background-color: $black;
-            color: $white;
-        }
+	&-image {
+		.responsive-photo {
+			background-color: $black;
+			color: $white;
+		}
 
-        &.parallax {
-            background-attachment: fixed;
-        }
-    }
+		&.parallax {
+			background-attachment: fixed;
+		}
+	}
 
-    &-overlay {
-        position: relative;
+	&-overlay {
+		position: relative;
 
-        >* {
-            position: inherit;
-            z-index: 2;
-        }
+		> * {
+			position: inherit;
+			z-index: 2;
+		}
 
-        &:before {
-            display: block;
-            position: absolute;
-            z-index: 0;
-            content: '';
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-color: rgba(0,0,0,.4);
-        }
-    }
+		&:before {
+			display: block;
+			position: absolute;
+			z-index: 0;
+			content: '';
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, .4);
+		}
+	}
 
-    &-trans {
-        &-red {
-            background-color: $red;
-            background-color: rgba($red,.7);
-        }
+	&-trans {
+		&-red {
+			background-color: $red;
+			background-color: rgba($red, .7);
+		}
 
-        &-orange {
-            background-color: $orange;
-            background-color: rgba($orange,.7);
-        }
+		&-orange {
+			background-color: $orange;
+			background-color: rgba($orange, .7);
+		}
 
-        &-green {
-            background-color: $green;
-            background-color: rgba($green,.7);
-        }
+		&-green {
+			background-color: $green;
+			background-color: rgba($green, .7);
+		}
 
-        &-blue {
-            background-color: $blue;
-            background-color: rgba($blue,.7);
-        }
+		&-blue {
+			background-color: $blue;
+			background-color: rgba($blue, .7);
+		}
 
-        &-navy {
-            background-color: $navy;
-            background-color: rgba($navy,.7);
-        }
+		&-navy {
+			background-color: $navy;
+			background-color: rgba($navy, .7);
+		}
 
-        &-white {
-            background-color: $white;
-            background-color: rgba($white,.8);
-        }
+		&-white {
+			background-color: $white;
+			background-color: rgba($white, .8);
+		}
 
-        &-light-gray {
-            background-color: $light-gray;
-            background-color: rgba($light-gray,.8);
-        }
+		&-light-gray {
+			background-color: $light-gray;
+			background-color: rgba($light-gray, .8);
+		}
 
-        &-gray {
-            background-color: $gray;
-            background-color: rgba($gray,.7);
-        }
+		&-gray {
+			background-color: $gray;
+			background-color: rgba($gray, .7);
+		}
 
-        &-dark-gray {
-            background-color: $dark-gray;
-            background-color: rgba($dark-gray,.7);
-        }
+		&-dark-gray {
+			background-color: $dark-gray;
+			background-color: rgba($dark-gray, .7);
+		}
 
-        &-black {
-            background-color: $pure-black;
-            background-color: rgba($pure-black,.6);
-        }
-    }
+		&-black {
+			background-color: $pure-black;
+			background-color: rgba($pure-black, .6);
+		}
+	}
 
-    &-gradient {
-        &-red {
-            @include angled-gradient($dark-red, $light-red, $red);
-        }
+	&-gradient {
+		&-red {
+			@include angled-gradient($dark-red, $light-red, $red);
+		}
 
-        &-orange {
-            @include angled-gradient($dark-orange, $light-orange, $orange);
-        }
+		&-orange {
+			@include angled-gradient($dark-orange, $light-orange, $orange);
+		}
 
-        &-green {
-            @include angled-gradient($dark-green, $light-green, $green);
-        }
+		&-green {
+			@include angled-gradient($dark-green, $light-green, $green);
+		}
 
-        &-blue {
-            @include angled-gradient($dark-blue, $light-blue, $blue);
-        }
+		&-blue {
+			@include angled-gradient($dark-blue, $light-blue, $blue);
+		}
 
-        &-navy {
-            @include angled-gradient($dark-navy, $light-navy, $navy);
-        }
+		&-navy {
+			@include angled-gradient($dark-navy, $light-navy, $navy);
+		}
 
-        &-light-gray {
-            @include angled-gradient($smoke, $white-smoke, $light-gray);
-        }
+		&-light-gray {
+			@include angled-gradient($smoke, $white-smoke, $light-gray);
+		}
 
-        &-gray {
-            @include angled-gradient($monsoon, $iron, $gray);
-        }
+		&-gray {
+			@include angled-gradient($monsoon, $iron, $gray);
+		}
 
-        &-dark-gray {
-            @include angled-gradient($black, $monsoon, $dark-gray);
-        }
+		&-dark-gray {
+			@include angled-gradient($black, $monsoon, $dark-gray);
+		}
 
-        &-black {
-            @include angled-gradient($jet, $dark-gray, $black);
-        }
-    }
+		&-black {
+			@include angled-gradient($jet, $dark-gray, $black);
+		}
+	}
 }
 
 .hover {
-    &-shadow:hover {
-        @include drop-shadow(1px, 1px, 5px, rgba(0,0,0,.2));
-    }
+	&-shadow:hover {
+		@include drop-shadow(1px, 1px, 5px, rgba(0,0,0,.2));
+	}
 
-    &-background-white:hover {
-        background-color: $white;
-    }
+	&-background-white:hover {
+		background-color: $white;
+	}
 
-    &-background-light-gray:hover {
-        background-color: $white-smoke;
-    }
+	&-background-light-gray:hover {
+		background-color: $white-smoke;
+	}
 }
 
 [class*="hover-"] {
-    @include transition;
+	@include transition;
 }
 
 .item-centered {
-    margin-left: auto;
-    margin-right: auto;
-    display: block
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 .no-spacing {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .padding {
-    &-5 {
-        padding: .2rem;
-    }
+	&-5 {
+		padding: .2rem;
+	}
 
-    &-10 {
-        padding: .5rem;
-    }
+	&-10 {
+		padding: .5rem;
+	}
 
-    &-15 {
-        padding: .83rem;
-    }
+	&-15 {
+		padding: .83rem;
+	}
 
-    &-20 {
-        padding: 1.1rem;
-    }
+	&-20 {
+		padding: 1.1rem;
+	}
 
-    &-25 {
-        padding: 1.3rem;
-    }
+	&-25 {
+		padding: 1.3rem;
+	}
 
-    &-30 {
-        padding: 1.6rem;
-    }
+	&-30 {
+		padding: 1.6rem;
+	}
 }
 
 .no-padding {
-    padding: 0;
+	padding: 0;
 }
 
 .padding-top {
-    &-5 {
-        padding-top: .2rem;
-    }
+	&-5 {
+		padding-top: .2rem;
+	}
 
-    &-10 {
-        padding-top: .5rem;
-    }
+	&-10 {
+		padding-top: .5rem;
+	}
 
-    &-15 {
-        padding: .83rem;
-    }
+	&-15 {
+		padding: .83rem;
+	}
 
-    &-20 {
-        padding: 1.1rem;
-    }
+	&-20 {
+		padding: 1.1rem;
+	}
 
-    &-25 {
-        padding: 1.3rem;
-    }
+	&-25 {
+		padding: 1.3rem;
+	}
 
-    &-30 {
-        padding: 1.6rem;
-    }
+	&-30 {
+		padding: 1.6rem;
+	}
 
-    &-40 {
-        padding: 2.2rem;
-    }
+	&-40 {
+		padding: 2.2rem;
+	}
 
-    &-50 {
-        padding-top: 2.7rem;
-    }
+	&-50 {
+		padding-top: 2.7rem;
+	}
 
-    @media medium {
-        &-30 {
-            padding-top: 1.6rem/2;
-        }
+	@media medium {
+		&-30 {
+			padding-top: 1.6rem/2;
+		}
 
-        &-40 {
-            padding-top: 2.2rem/2;
-        }
+		&-40 {
+			padding-top: 2.2rem/2;
+		}
 
-        &-50 {
-            padding-top: 2.7rem/2;
-        }
-    }
+		&-50 {
+			padding-top: 2.7rem/2;
+		}
+	}
 
-    @media large {
-        &-30 {
-            padding: 1.6rem;
-        }
+	@media large {
+		&-30 {
+			padding: 1.6rem;
+		}
 
-        &-40 {
-            padding: 2.2rem;
-        }
+		&-40 {
+			padding: 2.2rem;
+		}
 
-        &-50 {
-            padding-top: 2.7rem;
-        }
-    }
+		&-50 {
+			padding-top: 2.7rem;
+		}
+	}
 }
 
 .no-padding-top {
-    padding-top: 0;
+	padding-top: 0;
 }
 
 .padding-bottom {
-    &-5 {
-        padding-bottom: 5px;
-    }
+	&-5 {
+		padding-bottom: 5px;
+	}
 
-    &-10 {
-        padding-bottom: 10px;
-    }
+	&-10 {
+		padding-bottom: 10px;
+	}
 
-    &-20,
-    &-30,
-    &-40,
-    &-50 {
-        padding-bottom: 20px;
-    }
+	&-20,
+	&-30,
+	&-40,
+	&-50 {
+		padding-bottom: 20px;
+	}
 
-    @media medium {
-        &-30 {
-            padding-bottom: 15px;
-        }
+	@media medium {
+		&-30 {
+			padding-bottom: 15px;
+		}
 
-        &-40 {
-            padding-bottom: 20px;
-        }
+		&-40 {
+			padding-bottom: 20px;
+		}
 
-        &-50 {
-            padding-bottom: 25px;
-        }
-    }
+		&-50 {
+			padding-bottom: 25px;
+		}
+	}
 
-    @media large {
-        &-30 {
-            padding-bottom: 30px;
-        }
+	@media large {
+		&-30 {
+			padding-bottom: 30px;
+		}
 
-        &-40 {
-            padding-bottom: 40px;
-        }
+		&-40 {
+			padding-bottom: 40px;
+		}
 
-        &-50 {
-            padding-bottom: 50px;
-        }
-    }
+		&-50 {
+			padding-bottom: 50px;
+		}
+	}
 }
 
 .no-padding-bottom {
-    padding-bottom: 0;
+	padding-bottom: 0;
 }
 
 .margin-top {
-    &-5 {
-        margin-top: 5px;
-    }
+	&-5 {
+		margin-top: 5px;
+	}
 
-    &-10 {
-        margin-top: 10px;
-    }
+	&-10 {
+		margin-top: 10px;
+	}
 
-    &-20,
-    &-30,
-    &-40,
-    &-50 {
-        margin-top: 20px;
-    }
+	&-20,
+	&-30,
+	&-40,
+	&-50 {
+		margin-top: 20px;
+	}
 
-    @media medium {
-        &-30 {
-            margin-top: 15px;
-        }
+	@media medium {
+		&-30 {
+			margin-top: 15px;
+		}
 
-        &-40 {
-            margin-top: 20px;
-        }
+		&-40 {
+			margin-top: 20px;
+		}
 
-        &-50 {
-            margin-top: 25px;
-        }
-    }
+		&-50 {
+			margin-top: 25px;
+		}
+	}
 
-    @media large {
-        &-30 {
-            margin-top: 30px;
-        }
+	@media large {
+		&-30 {
+			margin-top: 30px;
+		}
 
-        &-40 {
-            margin-top: 40px;
-        }
+		&-40 {
+			margin-top: 40px;
+		}
 
-        &-50 {
-            margin-top: 50px;
-        }
-    }
+		&-50 {
+			margin-top: 50px;
+		}
+	}
 }
 
 .no-margin-top {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 .margin-bottom {
-    &-5 {
-        margin-bottom: 5px;
-    }
+	&-5 {
+		margin-bottom: 5px;
+	}
 
-    &-10 {
-        margin-bottom: 10px;
-    }
+	&-10 {
+		margin-bottom: 10px;
+	}
 
-    &-20,
-    &-30,
-    &-40,
-    &-50 {
-        margin-bottom: 20px;
-    }
+	&-20,
+	&-30,
+	&-40,
+	&-50 {
+		margin-bottom: 20px;
+	}
 
-    @media medium {
-        &-30 {
-            margin-bottom: 15px;
-        }
+	@media medium {
+		&-30 {
+			margin-bottom: 15px;
+		}
 
-        &-40 {
-            margin-bottom: 20px;
-        }
+		&-40 {
+			margin-bottom: 20px;
+		}
 
-        &-50 {
-            margin-bottom: 25px;
-        }
-    }
+		&-50 {
+			margin-bottom: 25px;
+		}
+	}
 
-    @media large {
-        &-30 {
-            margin-bottom: 30px;
-        }
+	@media large {
+		&-30 {
+			margin-bottom: 30px;
+		}
 
-        &-40 {
-            margin-bottom: 40px;
-        }
+		&-40 {
+			margin-bottom: 40px;
+		}
 
-        &-50 {
-            margin-bottom: 50px;
-        }
-    }
+		&-50 {
+			margin-bottom: 50px;
+		}
+	}
 }
 
 .no-margin-bottom {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .shadow {
-    @include drop-shadow(1px, 1px, 5px, rgba(0, 0, 0, 0.5));
+	@include drop-shadow(1px, 1px, 5px, rgba(0, 0, 0, 0.5));
 }
 
 .stretch-content {
-    min-height: 100%;
+	min-height: 100%;
 }

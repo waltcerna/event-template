@@ -13,7 +13,7 @@
 		width: 100%;
 		height: 0;
 		padding-top: 56%;
-		background-image: url($ventana-analyst-report);
+		// background-image: url($ventana-analyst-report);
 
 		@include medium($md-breakpoint) {
 			width: 40%;
@@ -81,9 +81,9 @@
 	}
 }
 
-#contest {
-	background-image: url($dashboard-background);
-}
+// #contest {
+// 	background-image: url($dashboard-background);
+// }
 
 #keynote {
 	.speaker-container {
@@ -119,7 +119,7 @@
 		margin: 20px;
 		text-align: center;
 
-		>p {
+		> p {
 			color: $black;
 		}
 
@@ -140,7 +140,9 @@
 	padding-top: 100px;
 	padding-bottom: 100px;
 	border: 1px solid $white;
-	background-image: url($keynote-background);
+	background: url($keynote-background) no-repeat top center;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 #sponsorship {
@@ -183,7 +185,7 @@
 			padding-bottom: 56.25%;
 		}
 
-		>img {
+		> img {
 			display: block;
 			position: absolute;
 			height: auto;
@@ -217,14 +219,11 @@
 	}
 }
 
-
-
 //AGENDA PAGE
 //used to determin spacing allowed for the time labels to the left of the list
 $time-label-width: 200px;
 
 .agenda-page .agendaMiddle {
-
 	//for the agenda sorting dropdown and top bar controls
 	.sort {
 		padding: 0 20px;
@@ -240,7 +239,7 @@ $time-label-width: 200px;
 				display: none;
 			}
 
-			>a {
+			> a {
 				display: inline-block !important;
 				padding: 1em 2.5em;
 				background-color: $black;
@@ -303,7 +302,7 @@ $time-label-width: 200px;
 			cursor: default;
 		}
 
-		>p {
+		> p {
 			display: none;
 		}
 
@@ -551,12 +550,11 @@ $time-label-width: 200px;
 		}
 
 		//get rid of the down icon and color change hover state when there is no description
-		&[style="cursor:default"]{
+		&[style="cursor:default"] {
 			.title .session:before,
 			.title .session:after {
 				display: none;
 			}
-	
 			.title div.description {
 				display: none !important;
 			}
@@ -588,9 +586,9 @@ $time-label-width: 200px;
 			margin-bottom: 20px;
 		}
 
-		>h6,
+		> h6,
 		.session-sp-list,
-		.session-sp-list>li {
+		.session-sp-list > li {
 			display: inline-block;
 			*zoom: 1;
 			*display: inline;
@@ -598,13 +596,13 @@ $time-label-width: 200px;
 			float: none;
 		}
 
-		>h6 {
+		> h6 {
 			@include uppercase;
 			font-weight: 400;
 			margin-right: 7px;
 		}
 
-		.session-sp-list>li {
+		.session-sp-list > li {
 			padding: 0;
 			margin: 0;
 			height: auto;
@@ -631,7 +629,7 @@ $time-label-width: 200px;
 		list-style: none;
 		padding-left: 20px;
 
-		&>li {
+		& > li {
 			position: relative;
 
 			&:before {
@@ -653,8 +651,6 @@ $time-label-width: 200px;
 }
 
 //end agenda-page agendaMiddle
-
-
 
 //for the download presentation button after the event is over
 .session-dl-block {
@@ -764,7 +760,7 @@ $time-label-width: 200px;
 			padding: 0;
 			@include drop-shadow(2px, 2px, 10px, rgba(0,0,0,.5));
 
-			>div {
+			> div {
 				height: auto;
 			}
 
@@ -806,8 +802,8 @@ $time-label-width: 200px;
 						right: -40px;
 					}
 
-					height:30px;
-					width:30px;
+					height: 30px;
+					width: 30px;
 
 					&:before,
 					&:after {
@@ -828,7 +824,6 @@ $time-label-width: 200px;
 					}
 
 					&:hover {
-
 						&:before,
 						&:after {
 							opacity: 0.6;
@@ -845,8 +840,7 @@ $time-label-width: 200px;
 		#cboxMiddleRight,
 		#cboxBottomLeft,
 		#cboxBottomCenter,
-		#cboxBottomRight
-			{
+		#cboxBottomRight {
 			display: none;
 		}
 	}
@@ -860,9 +854,6 @@ $time-label-width: 200px;
 		font-weight: 300;
 	}
 }
-
-
-
 
 //SPEAKERS PAGE
 .speakers-list {
@@ -910,7 +901,7 @@ $time-label-width: 200px;
 		.sp-details {
 			margin-left: 0px;
 
-			>div {
+			> div {
 				margin-bottom: 10px;
 			}
 
@@ -945,8 +936,6 @@ $time-label-width: 200px;
 	}
 }
 
-
-
 //WORKSHOP PAGE
 #workshop-prep {
 	.card {
@@ -964,8 +953,6 @@ $time-label-width: 200px;
 		}
 	}
 }
-
-
 
 //REGISTRATION PAGES
 .registration-page {
@@ -998,6 +985,5 @@ $time-label-width: 200px;
 				}
 			}
 		}
-
 	}
 }

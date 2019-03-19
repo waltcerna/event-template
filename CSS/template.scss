@@ -4,562 +4,547 @@ $menu-mobile-height: 4.1rem;
 
 //the full width div the nav is in
 div.top {
-    position: relative;
-    z-index: 6;
-    background-color: $white;
-    width: 100%;
-    @include drop-shadow(1px, 1px, 10px, rgba(0,0,0,.1));
+	position: relative;
+	z-index: 6;
+	background-color: $white;
+	width: 100%;
+	@include drop-shadow(1px, 1px, 10px, rgba(0,0,0,.1));
 
-    @include medium($md-breakpoint) {
-        height: auto;
-        z-index: 5;
-        @include transition;
-    }
+	@include medium($md-breakpoint) {
+		height: auto;
+		z-index: 5;
+		@include transition;
+	}
 
-    .registration-page & {
-        height: 0;
-    }
+	.registration-page & {
+		height: 0;
+	}
 
-    .registration-page .my-confirmation-content & {
-        height: auto;
-    }
+	.registration-page .my-confirmation-content & {
+		height: auto;
+	}
 
-    //navigation div which serves as a row
-    .navigation {
-        @include display(flex);
-        @include flex(0, 1, auto);
-        @include flex-direction(row);
-        @include flex-wrap(wrap);
-        @include justify-content(space-between);
-        @include align-items(stretch);
-        position: relative;
-        margin: 0 auto;
-        background-color: $white;
+	//navigation div which serves as a row
+	.navigation {
+		@include display(flex);
+		@include flex(0, 1, auto);
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		@include align-items(stretch);
+		position: relative;
+		margin: 0 auto;
+		background-color: $white;
 
-        @include medium($md-breakpoint) {
-            max-width: $md-breakpoint;
-        }
+		@include medium($md-breakpoint) {
+			max-width: $md-breakpoint;
+		}
 
-        @include xlarge($xl-breakpoint) {
-            max-width: $lg-breakpoint;
-        }
+		@include xlarge($xl-breakpoint) {
+			max-width: $lg-breakpoint;
+		}
 
-        @include doubleXL($doubleXL-breakpoint) {
-            max-width: $doubleXL-breakpoint;
-        }
+		@include doubleXL($doubleXL-breakpoint) {
+			max-width: $doubleXL-breakpoint;
+		}
 
-        @include tripleXL($tripleXL-breakpoint) {
-            max-width: $tripleXL-breakpoint;
-        }
+		@include tripleXL($tripleXL-breakpoint) {
+			max-width: $tripleXL-breakpoint;
+		}
 
-        #menu {
-            @include display(flex);
-            @include flex-direction(column);
-            position: absolute;
-            z-index: 2;
-            overflow: hidden;
-            top: 0;
-            left: 0;
-            padding: $menu-mobile-height 0 0 0;
-            width: 100%;
-            min-height: 100%;
-            max-height: 0;
-            height: auto;
-            overflow: hidden;
-            @include transition;
+		#menu {
+			@include display(flex);
+			@include flex-direction(column);
+			position: absolute;
+			z-index: 2;
+			overflow: hidden;
+			top: 0;
+			left: 0;
+			padding: $menu-mobile-height 0 0 0;
+			width: 100%;
+			min-height: 100%;
+			max-height: 0;
+			height: auto;
+			overflow: hidden;
+			@include transition;
 
-            @include medium($md-breakpoint) {
-                @include display(flex);
-                @include flex-direction(row);
-                @include flex-wrap(wrap);
-                @include justify-content(flex-end);
-                @include flex(0, 0, auto);
-                position: relative;
-                top: auto;
-                left: auto;
-                width: auto !important;
-                min-height: 100%;
-                max-height: none;
-                text-align: right;
-                padding: 0 0 0 1.1rem;
-            }
+			@include medium($md-breakpoint) {
+				@include display(flex);
+				@include flex-direction(row);
+				@include flex-wrap(wrap);
+				@include justify-content(flex-end);
+				@include flex(0, 0, auto);
+				position: relative;
+				top: auto;
+				left: auto;
+				width: auto !important;
+				min-height: 100%;
+				max-height: none;
+				text-align: right;
+				padding: 0 0 0 1.1rem;
+			}
 
-            &.menu-opened {
-                max-height: 50rem;
-                @include drop-shadow(1px, 1px, 10px, rgba(0,0,0,.5));
+			&.menu-opened {
+				max-height: 50rem;
+				@include drop-shadow(1px, 1px, 10px, rgba(0,0,0,.5));
 
-                &:after {
-                    background: $red;
-                    box-shadow:
-                        0 0.25em 0 0 $red,
-                        0 0.5em 0 0 $red;
-                }
-            }
+				&:after {
+					background: $red;
+					box-shadow: 0 0.25em 0 0 $red, 0 0.5em 0 0 $red;
+				}
+			}
 
-            //hamburger icon for mobile view
-            &:after {
-                content: "";
-                position: absolute;
-                right: 15px;
-                top: 28px;
-                width: 1.5em;
-                height: 0.15em;
-                background: $dark-gray;
-                box-shadow:
-                    0 0.25em 0 0 $dark-gray,
-                    0 0.5em 0 0 $dark-gray;
-                @include transition;
+			//hamburger icon for mobile view
+			&:after {
+				content: "";
+				position: absolute;
+				right: 15px;
+				top: 28px;
+				width: 1.5em;
+				height: 0.15em;
+				background: $dark-gray;
+				box-shadow: 0 0.25em 0 0 $dark-gray, 0 0.5em 0 0 $dark-gray;
+				@include transition;
 
-                @include medium($md-breakpoint) {
-                    display: none;
-                }
-            }
+				@include medium($md-breakpoint) {
+					display: none;
+				}
+			}
 
-            //menu items
-            li {
-                display: block;
-                position: relative;
-                float: none;
-                margin: 0;
-                padding: 0;
-                background-color: $light-gray;
+			//menu items
+			li {
+				display: block;
+				position: relative;
+				float: none;
+				margin: 0;
+				padding: 0;
+				background-color: $light-gray;
 
-                @include medium($md-breakpoint) {
-                    @include display(flex);
-                    @include flex-direction(row);
-                    @include justify-content(center);
-                    @include flex(0, 0, auto);
-                    background-color: $white;
-                    border: none;
-                }
+				@include medium($md-breakpoint) {
+					@include display(flex);
+					@include flex-direction(row);
+					@include justify-content(center);
+					@include flex(0, 0, auto);
+					background-color: $white;
+					border: none;
+				}
 
-                &:hover ul,
-                ul {
-                    display: none !important;
-                }
+				&:hover ul,
+				ul {
+					display: none !important;
+				}
 
-                a {
-                    display: block;
-                    position: relative;
-                    z-index: 3;
-                    padding: .5rem .83rem;
-                    text-decoration: none;
-                    color: $black;
-                    font-weight: 600;
-                    font-size: .88rem;
-                    line-height: 1em;
-                    @include uppercase;
-                    @include transition;
+				a {
+					display: block;
+					position: relative;
+					z-index: 3;
+					padding: .5rem .83rem;
+					text-decoration: none;
+					color: $black;
+					font-weight: 600;
+					font-size: .88rem;
+					line-height: 1em;
+					@include uppercase;
+					@include transition;
 
-                    @include medium($md-breakpoint) {
-                        @include display(flex);
-                        @include flex-direction(row);
-                        @include justify-content(center);
-                        @include align-items(center);
-                        @include flex(0, 0, auto);
-                        overflow: hidden;
-                        border-bottom: none;
-                        color: $monsoon;
-                        font-size: .77rem;
-                        line-height: 2.7;
-                        padding: .5rem 1.1rem;
-                        min-height: 100%;
+					@include medium($md-breakpoint) {
+						@include display(flex);
+						@include flex-direction(row);
+						@include justify-content(center);
+						@include align-items(center);
+						@include flex(0, 0, auto);
+						overflow: hidden;
+						border-bottom: none;
+						color: $monsoon;
+						font-size: .77rem;
+						line-height: 2.7;
+						padding: .5rem 1.1rem;
+						min-height: 100%;
 
-                        &:hover {
-                            color: $red;
+						&:hover {
+							color: $red;
 
-                            &:after {
-                                @include translateY(0);
-                            }
-                        }
+							&:after {
+								@include translateY(0);
+							}
+						}
 
-                        &:after {
-                            display: block;
-                            position: absolute;
-                            z-index: 4;
-                            content: '';
-                            bottom: 0;
-                            left: 0;
-                            height: 5px;
-                            width: 100%;
-                            background-color: $red;
-                            @include translateY(5px);
-                            @include transition;
-                        }
-                    }
-                }
+						&:after {
+							display: block;
+							position: absolute;
+							z-index: 4;
+							content: '';
+							bottom: 0;
+							left: 0;
+							height: 5px;
+							width: 100%;
+							background-color: $red;
+							@include translateY(5px);
+							@include transition;
+						}
+					}
+				}
 
-                @include medium($md-breakpoint) {
-                    &:nth-child(2) a {
-                        &:hover {
-                            color: $orange;
-                        }
+				@include medium($md-breakpoint) {
+					&:nth-child(2) a {
+						&:hover {
+							color: $orange;
+						}
 
-                        &:after {
-                            background-color: $orange;
-                        }
-                    }
+						&:after {
+							background-color: $orange;
+						}
+					}
 
-                    &:nth-child(3) a {
-                        &:hover {
-                            color: $blue;
-                        }
+					&:nth-child(3) a {
+						&:hover {
+							color: $blue;
+						}
 
-                        &:after {
-                            background-color: $blue;
-                        }
-                    }
+						&:after {
+							background-color: $blue;
+						}
+					}
 
-                    &:nth-child(4) a {
-                        &:hover {
-                            color: $green;
-                        }
+					&:nth-child(4) a {
+						&:hover {
+							color: $green;
+						}
 
-                        &:after {
-                            background-color: $green;
-                        }
-                    }
+						&:after {
+							background-color: $green;
+						}
+					}
 
-                    &:nth-child(5) a {
-                        &:hover {
-                            color: $navy;
-                        }
+					&:nth-child(5) a {
+						&:hover {
+							color: $navy;
+						}
 
-                        &:after {
-                            background-color: $navy;
-                        }
-                    }
-                }
+						&:after {
+							background-color: $navy;
+						}
+					}
+				}
 
-                &.subnav-register {
-                    padding: .5rem;
+				&.subnav-register {
+					padding: .5rem;
 
-                    @include medium($md-breakpoint) {
-                        padding: 0;
-                    }
+					@include medium($md-breakpoint) {
+						padding: 0;
+					}
 
-                    a {
-                        background-color: $red;
-                        color: $white;
-                        padding: .5rem .83rem;
-                        margin: 0;
-                        cursor: pointer;
-                        @include transition();
+					a {
+						background-color: $red;
+						color: $white;
+						padding: .5rem .83rem;
+						margin: 0;
+						cursor: pointer;
+						@include transition();
 
-                        &:hover {
-                            color: $white;
-                        }
+						&:hover {
+							color: $white;
+						}
 
-                        @include medium($md-breakpoint) {
-                            background-color: $white;
-                            color: $monsoon;
+						@include medium($md-breakpoint) {
+							background-color: $white;
+							color: $monsoon;
 
-                            &:hover {
-                                background-color: $red;
-                            }
+							&:hover {
+								background-color: $red;
+							}
 
-                            &:active {
-                                background-color: $dark-red;
-                            }
+							&:active {
+								background-color: $dark-red;
+							}
 
-                            &:after {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
-    &.sticky {
-        position: fixed;
-        z-index: 500;
-        top: 0;
-        left: 0;
-        @include drop-shadow(1px, 1px, 10px, rgba(0,0,0,.5));
-        width: 100%;
-        max-width: none;
-        background-color: $white;
-    }
+	&.sticky {
+		position: fixed;
+		z-index: 500;
+		top: 0;
+		left: 0;
+		@include drop-shadow(1px, 1px, 10px, rgba(0,0,0,.5));
+		width: 100%;
+		max-width: none;
+		background-color: $white;
+	}
 }
 
 .content.scrolled,
 .registration-page .my-confirmation-content.content.scrolled {
-    padding-top: 4.5rem;
+	padding-top: 4.5rem;
 }
 
 .registration-page .content.scrolled {
-    padding-top: 0;
+	padding-top: 0;
 }
-
-
 
 .logo-lockup {
-    @include display(flex);
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
-    @include align-items(center);
-    @include flex(0, 0, auto);
-    position: relative;
-    z-index: 1;
-    width: auto;
-    min-height: 100%;
-    padding: .83rem;
+	@include display(flex);
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
+	@include align-items(center);
+	@include flex(0, 0, auto);
+	position: relative;
+	z-index: 1;
+	width: auto;
+	min-height: 100%;
+	padding: .83rem;
 
-    .text {
-        @include uppercase;
-        color: $monsoon;
-        font-weight: 400;
-        font-size: 1em;
-        line-height: 1em;
+	.text {
+		@include uppercase;
+		color: $monsoon;
+		font-weight: 400;
+		font-size: 1em;
+		line-height: 1em;
 
-        .top-line {
-            display: block;
-            font-size: .77rem;
-            font-weight: 600;
-        }
-    }
+		.top-line {
+			display: block;
+			font-size: .77rem;
+			font-weight: 600;
+		}
+	}
 
-    .logo-icon {
-        width: 2.2rem;
-        padding-right: .5rem;
-    }
+	.logo-icon {
+		width: 2.2rem;
+		padding-right: .5rem;
+	}
 
-    @include transition;
+	@include transition;
 
-    @include medium($md-breakpoint) {
-        font-size: 1.1rem;
+	@include medium($md-breakpoint) {
+		font-size: 1.1rem;
 
-        &:hover {
-            background-color: $light-gray;
-        }
+		&:hover {
+			background-color: $light-gray;
+		}
 
-        .logo-icon {
-            width: 2.7rem;
-        }
-    }
+		.logo-icon {
+			width: 2.7rem;
+		}
+	}
 }
-
-
 
 /* FOOTER
 -------------------------------------------------------------- */
 .cvent-footer-wrapper {
-    padding: 0;
+	padding: 0;
 
-    .privacy-policy {
-        display: block;
-        color: $gray;
-        padding: .83rem 1.1rem;
-        background-color: darken($black, 5%);
-        font-size: .66rem;
-        line-height: 1em;
-        @include uppercase;
-        font-weight: 600;
-        @include transition;
+	.privacy-policy {
+		display: block;
+		color: $gray;
+		padding: .83rem 1.1rem;
+		background-color: darken($black, 5%);
+		font-size: .66rem;
+		line-height: 1em;
+		@include uppercase;
+		font-weight: 600;
+		@include transition;
 
-        &:hover {
-            background-color: darken($black, 10%);
-            text-decoration: none !important;
-        }
-    }
+		&:hover {
+			background-color: darken($black, 10%);
+			text-decoration: none !important;
+		}
+	}
 }
 
 .footer {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    padding: 1.6rem 0 2.7rem 0 !important;
-    margin: 0px;
-    color: $gray;
-    background-color: $black;
-    font-family: $myriad-pro;
-    font-style: normal;
-    font-weight: 600;
-    @include uppercase;
-    font-size: .77rem;
-    line-height: 1em;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	padding: 1.6rem 0 2.7rem 0 !important;
+	margin: 0px;
+	color: $gray;
+	background-color: $black;
+	font-family: $myriad-pro;
+	font-style: normal;
+	font-weight: 600;
+	@include uppercase;
+	font-size: .77rem;
+	line-height: 1em;
 
-    .footer-logo {
-        display: block;
-        margin: 0 auto;
-    }
+	.footer-logo {
+		display: block;
+		margin: 0 auto;
+	}
 
-    .footer-links {
-        display: block;
-        padding: .38rem 0;
-        text-align: center;
+	.footer-links {
+		display: block;
+		padding: .38rem 0;
+		text-align: center;
 
-        a.link {
-            position: relative;
-            display: block;
-            border-top: 1px solid $iron;
-            color: $gray;
-            text-decoration: none;
-            padding: .5rem .83rem;
-            margin: 0;
-            white-space: nowrap;
+		a.link {
+			position: relative;
+			display: block;
+			border-top: 1px solid $iron;
+			color: $gray;
+			text-decoration: none;
+			padding: .5rem .83rem;
+			margin: 0;
+			white-space: nowrap;
 
-            &:first-child {
-                margin-top: 1.1rem;
-            }
+			&:first-child {
+				margin-top: 1.1rem;
+			}
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 
-    @include xlarge($xl-breakpoint) {
-        padding: 1.1rem 0 2.7rem 0 !important;
-        font-size: 11px;
+	@include xlarge($xl-breakpoint) {
+		padding: 1.1rem 0 2.7rem 0 !important;
+		font-size: 11px;
 
-        .footer-logo {
-            margin: 0;
-        }
+		.footer-logo {
+			margin: 0;
+		}
 
-        .footer-links {
-            padding: 0;
-            text-align: right;
+		.footer-links {
+			padding: 0;
+			text-align: right;
 
-            a.link {
-                display: inline-block;
-                *zoom: 1;
-                *display: inline;
-                padding: .16rem .5rem;
-                border-top: none;
+			a.link {
+				display: inline-block;
+				*zoom: 1;
+				*display: inline;
+				padding: .16rem .5rem;
+				border-top: none;
 
-                &:first-child {
-                    margin-top: 0;
-                }
+				&:first-child {
+					margin-top: 0;
+				}
 
-                &:last-child {
-                    padding-right: 0px;
-                }
+				&:last-child {
+					padding-right: 0px;
+				}
 
-                &:before {
-                    position: absolute;
-                    display: block;
-                    content: "";
-                    width: 1px;
-                    height: 14px;
-                    right: 0;
-                    top: 50%;
-                    margin-top: -7px;
-                    background-color: #bbbbbb;
-                }
+				&:before {
+					position: absolute;
+					display: block;
+					content: "";
+					width: 1px;
+					height: 14px;
+					right: 0;
+					top: 50%;
+					margin-top: -7px;
+					background-color: #bbbbbb;
+				}
 
-                &:last-child:before {
-                    display: none;
-                }
-            }
-        }
-    }
+				&:last-child:before {
+					display: none;
+				}
+			}
+		}
+	}
 
-    @include xlarge($xl-breakpoint) {
-        font-size: .66rem;
-    }
+	@include xlarge($xl-breakpoint) {
+		font-size: .66rem;
+	}
 }
-
-
-
 
 //PAGE SECTIONS
 section {
-    position: relative;
-    overflow: visible;
-    padding-top: 2.2rem;
-    padding-bottom: 2.2rem;
+	position: relative;
+	overflow: visible;
+	padding-top: 2.2rem;
+	padding-bottom: 2.2rem;
 
-    &.no-padding {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
+	&.no-padding {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 
-    &.no-padding-top {
-        padding-top: 0;
-    }
+	&.no-padding-top {
+		padding-top: 0;
+	}
 
-    &.no-padding-bottom {
-        padding-bottom: 0;
-    }
+	&.no-padding-bottom {
+		padding-bottom: 0;
+	}
 
-    @include medium($md-breakpoint) {
-        padding-top: 3.3rem;
-        padding-bottom: 3.3rem;
-    }
+	@include medium($md-breakpoint) {
+		padding-top: 3.3rem;
+		padding-bottom: 3.3rem;
+	}
 }
 
 a.course-catalog-link-test[href=''],
 .hide-content {
-    display: none !important;
+	display: none !important;
 }
-
-
-
 
 //BANNER STUFF
 #hero-banner {
-    position: relative;
-    overflow: visible;
-    z-index: 3;
-    padding-top: 2.2rem;
-    padding-bottom: 2.2rem;
+	position: relative;
+	overflow: visible;
+	z-index: 3;
+	padding-top: 2.2rem;
+	padding-bottom: 2.2rem;
 
-    .head {
-        padding-top: 1.1rem;
-        font-size: 2rem;
-        line-height: 2.7;
-        font-weight: 600;
-        @include uppercase;
+	.head {
+		padding-top: 1.1rem;
+		font-size: 2rem;
+		line-height: 1.4;
+		font-weight: 600;
+		@include uppercase;
 
-        @include medium($md-breakpoint) {
-            font-size: 3.3rem;
-            line-height: 1.625;
-        }
-    }
+		@include medium($md-breakpoint) {
+			font-size: 3rem;
+			line-height: 1.3;
+		}
+	}
 
-    .sub {
-        padding-top: 1.1rem;
-        font-size: .77rem;
-        line-height: 1;
-        font-weight: 400;
-        @include uppercase;
-    }
+	.sub {
+		padding-top: 1.1rem;
+		font-size: .77rem;
+		line-height: 1;
+		font-weight: 400;
+		@include uppercase;
+	}
 
-    @include medium($md-breakpoint) {
-        padding-top: 5.5rem;
-        padding-bottom: 5.5rem;
+	@include medium($md-breakpoint) {
+		padding-top: 5.5rem;
+		padding-bottom: 5.5rem;
 
-        &.above-card {
-            padding-bottom: 10rem;
-        }
+		&.above-card {
+			padding-bottom: 10rem;
+		}
 
-        .sub {
-            font-size: 1.2rem;
-            line-height: 1.3;
-        }
-    }
+		.sub {
+			font-size: 1.2rem;
+			line-height: 1.3;
+		}
+	}
 
-    &.sub-page {
-        padding-top: 2.2rem;
-        padding-bottom: 2.2rem;
+	&.sub-page {
+		padding-top: 2.2rem;
+		padding-bottom: 2.2rem;
 
-        .head {
-            padding-top: .5rem;
-        }
+		.head {
+			padding-top: .5rem;
+		}
 
-        .sub {
-            padding-top: 0;
-        }
+		.sub {
+			padding-top: 0;
+		}
 
-
-        .divider {
-            margin-left: 0;
-            margin-right: 0;
-        }
-    }
+		.divider {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
 }
 
 //end hero banner

@@ -1,426 +1,418 @@
 //Breakpoints
 
-@mixin medium($md-breakpoint){
-    @media (min-width:#{$md-breakpoint}) {
-        @content;
-    }
+@mixin medium($md-breakpoint) {
+	@media (min-width: #{$md-breakpoint}) {
+		@content;
+	}
 }
 @mixin large($lg-breakpoint) {
-    @media (min-width:#{$lg-breakpoint}) {
-        @content;
-    }
+	@media (min-width: #{$lg-breakpoint}) {
+		@content;
+	}
 }
 @mixin xlarge($xl-breakpoint) {
-    @media (min-width:#{$xl-breakpoint}) {
-        @content;
-    }
+	@media (min-width: #{$xl-breakpoint}) {
+		@content;
+	}
 }
 @mixin doubleXL($doubleXL-breakpoint) {
-    @media (min-width:#{$doubleXL-breakpoint}) {
-        @content;
-    }
+	@media (min-width: #{$doubleXL-breakpoint}) {
+		@content;
+	}
 }
 @mixin tripleXL($tripleXL-breakpoint) {
-    @media (min-width:#{$tripleXL-breakpoint}) {
-        @content;
-    }
+	@media (min-width: #{$tripleXL-breakpoint}) {
+		@content;
+	}
 }
 
 // SIZING
 
 @mixin size($width, $height: $width) {
-    width: $width;
-    height: $height;
+	width: $width;
+	height: $height;
 }
 
 @mixin min-size($width, $height:$width) {
-    min-width: $width;
-    min-height: $height;
+	min-width: $width;
+	min-height: $height;
 }
 
 @mixin max-size($width, $height:$width) {
-    max-width: $width;
-    max-height: $height;
+	max-width: $width;
+	max-height: $height;
 }
 
 // SPACING
 
 @mixin padding-x($padding) {
-    padding-left: $padding;
-    padding-right: $padding;
+	padding-left: $padding;
+	padding-right: $padding;
 }
 
 @mixin padding-y($padding) {
-    padding-top: $padding;
-    padding-bottom: $padding;
+	padding-top: $padding;
+	padding-bottom: $padding;
 }
 
 @mixin margin-x($margin) {
-    margin-left: $margin;
-    margin-right: $margin;
+	margin-left: $margin;
+	margin-right: $margin;
 }
 
 @mixin margin-y($margin) {
-    margin-top: $margin;
-    margin-bottom: $margin;
+	margin-top: $margin;
+	margin-bottom: $margin;
 }
 
 @mixin box-sizing($value) {
-    -webkit-box-sizing: $value;
-    -moz-box-sizing: $value;
-    box-sizing: $value;
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	box-sizing: $value;
 }
 
 // POSITIONING
 @mixin property($property, $value) {
+	@include _getProp(top) {
+		@if ($top !=null) {
+			top: $value;
+		}
+	}
 
-    @include _getProp(top) {
-        @if ($top !=null) {
-            top: $value;
-        }
-    }
+	@include _getProp(left) {
+		@if ($left !=null) {
+			left: $value;
+		}
+	}
 
-    @include _getProp(left) {
-        @if ($left !=null) {
-            left: $value;
-        }
-    }
+	@include _getProp(right) {
+		@if ($right !=null) {
+			right: $value;
+		}
+	}
 
-    @include _getProp(right) {
-        @if ($right !=null) {
-            right: $value;
-        }
-    }
+	@include _getProp(bottom) {
+		@if ($bottom !=null) {
+			bottom: $value;
+		}
+	}
 
-    @include _getProp(bottom) {
-        @if ($bottom !=null) {
-            bottom: $value;
-        }
-    }
-
-    @include _getProp($property);
+	@include _getProp($property);
 }
 
 @mixin position($position, $top:null, $left:null, $right:null, $bottom:null) {
-    position: $position;
-    @include property(top, $top);
-    @include property(right, $right);
-    @include property(bottom, $bottom);
-    @include property(left, $left);
+	position: $position;
+	@include property(top, $top);
+	@include property(right, $right);
+	@include property(bottom, $bottom);
+	@include property(left, $left);
 }
 
 // TYPOGRAPHY
 
 @mixin font-size($size) {
-    $calculated: round((unit($size) / unit($base-font-size)), 2);
-    font-size: #{$calculated}rem;
+	$calculated: round((unit($size) / unit($base-font-size)), 2);
+	font-size: #{$calculated}rem;
 }
 
 @mixin no-list-style() {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 
-    li {
-        display: block;
-    }
+	li {
+		display: block;
+	}
 }
 
 @mixin inline-list() {
-    @include no-list-style;
-    @include display(flex);
+	@include no-list-style;
+	@include display(flex);
 
-    li {
-        @include flex(0, 0, auto);
-        padding-right: $base-spacing / 2;
+	li {
+		@include flex(0, 0, auto);
+		padding-right: $base-spacing / 2;
 
-        &:last-child {
-            padding-right: 0;
-        }
-    }
+		&:last-child {
+			padding-right: 0;
+		}
+	}
 }
 
 @mixin stack-list() {
-    @include no-list-style;
-    @include display(flex);
+	@include no-list-style;
+	@include display(flex);
 
-    li {
-        padding-bottom: $base-spacing / 2;
+	li {
+		padding-bottom: $base-spacing / 2;
 
-        &:last-child {
-            padding-bottom: 0;
-        }
-    }
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
 }
 
 @mixin expand-list() {
-    @include no-list-style;
-    @include display(flex);
+	@include no-list-style;
+	@include display(flex);
 
-    li {
-        @include flex(1, 1, 100%);
-        padding-right: $base-spacing / 2;
+	li {
+		@include flex(1, 1, 100%);
+		padding-right: $base-spacing / 2;
 
-        &:last-child {
-            padding-right: 0;
-        }
-    }
+		&:last-child {
+			padding-right: 0;
+		}
+	}
 }
 
 @mixin prevent-highlight() {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 @mixin include-custom-font($family, $location, $weight: normal, $style: normal) {
+	$source: #{$location}/#{$family};
 
-    $source: #{$location}/#{$family};
-
-    @font-face {
-        font-family: #{$family};
-        src: url("#{$source}.eot");
-        src: url("#{$source}.eot?#iefix") format("embedded-opentype"),
-        url("#{$source}.ttf") format("truetype"),
-        url("#{$source}.woff") format("woff"),
-        url("#{$source}.svg# #{$family}") format("svg");
-        font-weight: $weight;
-        font-style: $style;
-    }
+	@font-face {
+		font-family: #{$family};
+		src: url("#{$source}.eot");
+		src: url("#{$source}.eot?#iefix") format("embedded-opentype"), url("#{$source}.ttf") format("truetype"),
+			url("#{$source}.woff") format("woff"), url("#{$source}.svg# #{$family}") format("svg");
+		font-weight: $weight;
+		font-style: $style;
+	}
 }
 
-@mixin uppercase {
-    text-transform: uppercase;
+@mixin uppercase() {
+	text-transform: uppercase;
 }
-
 
 // BACKGROUNDS/IMAGES
 
 @mixin linear-gradient($start-color, $end-color, $fallback-color: $end-color, $start-position: left, $end-position: right) {
-    background: $fallback-color;
-    background: -webkit-linear-gradient($start-position, $start-color, $end-color);
-    background: linear-gradient(to $end-position, $start-color, $end-color);
+	background: $fallback-color;
+	background: -webkit-linear-gradient($start-position, $start-color, $end-color);
+	background: linear-gradient(to $end-position, $start-color, $end-color);
 }
 
 @mixin angled-gradient($start-color, $end-color, $fallback-color: $end-color, $angle: 45deg) {
-    background: $fallback-color;
-    background: -webkit-linear-gradient($angle, $start-color, $end-color);
-    background: linear-gradient($angle, $start-color, $end-color);
+	background: $fallback-color;
+	background: -webkit-linear-gradient($angle, $start-color, $end-color);
+	background: linear-gradient($angle, $start-color, $end-color);
 }
 
 @mixin background-cover($image:null) {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 @mixin background-cover($image) {
-    @if ($image !=null) {
-        background-image: url(#{$image});
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+	@if ($image !=null) {
+		background-image: url(#{$image});
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
 }
 
 @mixin object-fit($value) {
-    -o-object-fit: $value;
-    object-fit: $value;
+	-o-object-fit: $value;
+	object-fit: $value;
 }
 
 @mixin aspect-ratio($width, $height) {
-    padding-top: ($height / $width) * 100%;
+	padding-top: ($height / $width) * 100%;
 }
-
-
 
 // BORDERS
 
 @mixin border-x($args) {
-    border-left: $args;
-    border-right: $args;
+	border-left: $args;
+	border-right: $args;
 }
 
 @mixin border-y($args) {
-    border-top: $args;
-    border-bottom: $args;
+	border-top: $args;
+	border-bottom: $args;
 }
 
 @mixin border-color-x($color) {
-    border-left-color: $color;
-    border-right-color: $color;
+	border-left-color: $color;
+	border-right-color: $color;
 }
 
 @mixin border-color-y($color) {
-    border-top-color: $color;
-    border-bottom-color: $color;
+	border-top-color: $color;
+	border-bottom-color: $color;
 }
 
 @mixin border-radius($topleft:0, $topright:0, $bottomright:0, $bottomleft:0) {
-    border-top-right-radius: $topright;
-    border-bottom-right-radius: $bottomright;
-    border-bottom-left-radius: $bottomleft;
-    border-top-left-radius: $topleft;
+	border-top-right-radius: $topright;
+	border-bottom-right-radius: $bottomright;
+	border-bottom-left-radius: $bottomleft;
+	border-top-left-radius: $topleft;
 }
 
 @mixin round() {
-    border-radius: 50%;
+	border-radius: 50%;
 }
 
 // LAYOUT
 @mixin columns($column-count, $column-gap) {
-    -webkit-column-count: $column-count;
-    -moz-column-count: $column-count;
-    column-count: $column-count;
-    -webkit-column-gap: $column-gap;
-    -moz-column-gap: $column-gap;
-    column-gap: $column-gap;
+	-webkit-column-count: $column-count;
+	-moz-column-count: $column-count;
+	column-count: $column-count;
+	-webkit-column-gap: $column-gap;
+	-moz-column-gap: $column-gap;
+	column-gap: $column-gap;
 }
 
 // FLEXBOX
 
 // display
 @mixin display($value) {
-    display: $value;
+	display: $value;
 }
 
 @mixin display($value) {
-        display: -webkit-#{$value};
-        display: $value;
+	display: -webkit-#{$value};
+	display: $value;
 }
 
 // flex-direction
 @mixin flex-direction($direction) {
-    -webkit-flex-direction: $direction;
-    flex-direction: $direction;
+	-webkit-flex-direction: $direction;
+	flex-direction: $direction;
 }
 
 // flex-wrap
 @mixin flex-wrap($wrap) {
-    -webkit-flex-wrap: $wrap;
-    flex-wrap: $wrap;
+	-webkit-flex-wrap: $wrap;
+	flex-wrap: $wrap;
 }
 
 // justify-content
 @mixin justify-content($align) {
-    -webkit-justify-content: $align;
-    justify-content: $align;
+	-webkit-justify-content: $align;
+	justify-content: $align;
 }
 
 // align-items
 @mixin align-items($align) {
-    -webkit-align-items: $align;
-    align-items: $align;
+	-webkit-align-items: $align;
+	align-items: $align;
 }
 
 // align-content
 @mixin align-content($align) {
-    -webkit-align-content: $align;
-    align-content: $align;
+	-webkit-align-content: $align;
+	align-content: $align;
 }
 
 // flex
 @mixin flex($grow, $shrink, $basis: auto) {
-    -webkit-flex: $grow $shrink $basis;
-    flex: $grow $shrink $basis;
-    max-width: none;
+	-webkit-flex: $grow $shrink $basis;
+	flex: $grow $shrink $basis;
+	max-width: none;
 }
 
 // order
 @mixin order($order) {
-    -webkit-order: $order;
-    order: $order;
+	-webkit-order: $order;
+	order: $order;
 }
 
 // align-self
 @mixin align-self($align) {
-    -webkit-align-self: $align;
-    align-self: $align;
+	-webkit-align-self: $align;
+	align-self: $align;
 }
-
 
 // DROP SHADOWS
 @mixin drop-shadow($x, $y, $blur, $color, $inset: false) {
-    @if $inset {
-      box-shadow:inset $x $y $blur $color;
-    } @else {
-      box-shadow: $x $y $blur $color;
-    }
-  }
+	@if $inset {
+		box-shadow: inset $x $y $blur $color;
+	} @else {
+		box-shadow: $x $y $blur $color;
+	}
+}
 
 // TRANSFORMATIONS
 
 @mixin backface-visibility($value) {
-    -webkit-backface-visibility: $value;
-    backface-visibility: $value;
+	-webkit-backface-visibility: $value;
+	backface-visibility: $value;
 }
 
 @mixin transform($args) {
-    -webkit-transform: $args;
-    transform: $args;
+	-webkit-transform: $args;
+	transform: $args;
 }
 
 @mixin transform-origin($x:top, $y:left) {
-    -webkit-transform-origin: $x $y;
-    transform-origin: $x $y;
+	-webkit-transform-origin: $x $y;
+	transform-origin: $x $y;
 }
 
 @mixin translate($x:0, $y:0) {
-    -webkit-transform: translate($x, $y);
-    transform: translate($x, $y);
+	-webkit-transform: translate($x, $y);
+	transform: translate($x, $y);
 }
 
 @mixin translateX($x:0) {
-    -webkit-transform: translateX($x);
-    transform: translateX($x);
+	-webkit-transform: translateX($x);
+	transform: translateX($x);
 }
 
 @mixin translateY($y:0) {
-    -webkit-transform: translateY($y);
-    transform: translateY($y);
+	-webkit-transform: translateY($y);
+	transform: translateY($y);
 }
 
 @mixin translate3d($x:0, $y:0, $z:0) {
-    -webkit-transform: translate3d($x, $y, $z);
-    transform: translate3d($x, $y, $z);
+	-webkit-transform: translate3d($x, $y, $z);
+	transform: translate3d($x, $y, $z);
 }
 
 @mixin rotate($deg) {
-    -webkit-transform: rotate($deg);
-    transform: rotate($deg);
+	-webkit-transform: rotate($deg);
+	transform: rotate($deg);
 }
 
 @mixin scale($factor:1.5) {
-    -webkit-transform: scale($factor);
-    transform: scale($factor);
+	-webkit-transform: scale($factor);
+	transform: scale($factor);
 }
 
 // FILTERS
 
 @mixin grayscale() {
-    filter: url('/Strategy/media/images/common/svg-filters/grayscale.svg');
-    filter: gray;
-    -webkit-filter: grayscale(100%);
+	filter: url('/Strategy/media/images/common/svg-filters/grayscale.svg');
+	filter: gray;
+	-webkit-filter: grayscale(100%);
 }
 
 // APPEARANCE
 
 @mixin appearance($value) {
-    -webkit-appearance: $value;
-    -moz-appearance: $value;
+	-webkit-appearance: $value;
+	-moz-appearance: $value;
 }
 
 // TRANSITIONS
 
 @mixin transition($duration:.2s, $ease:ease-out, $property:all, $delay:0s) {
-    -webkit-transition: $property $duration $ease $delay;
-    transition: $property $duration $ease $delay;
+	-webkit-transition: $property $duration $ease $delay;
+	transition: $property $duration $ease $delay;
 }
 
 @mixin transition-duration($duration:.2s) {
-    -webkit-transition-duration: $duration;
-    transition-duration: $duration;
+	-webkit-transition-duration: $duration;
+	transition-duration: $duration;
 }
 
 // ANIMATION
@@ -440,88 +432,84 @@
 // }
 
 @mixin animation($args) {
-    -webkit-animation: $args;
-    -moz-animation: $args;
-    animation: $args;
+	-webkit-animation: $args;
+	-moz-animation: $args;
+	animation: $args;
 }
 
 @mixin animation-delay($delay) {
-    -webkit-animation-delay: $delay;
-    -moz-animation-delay: $delay;
-    animation-delay: $delay;
+	-webkit-animation-delay: $delay;
+	-moz-animation-delay: $delay;
+	animation-delay: $delay;
 }
 
 @mixin animation-fill-mode($fill-mode) {
-    -webkit-animation-fill-mode: $fill-mode;
-    -moz-animation-fill-mode: $fill-mode;
-    animation-fill-mode: $fill-mode;
+	-webkit-animation-fill-mode: $fill-mode;
+	-moz-animation-fill-mode: $fill-mode;
+	animation-fill-mode: $fill-mode;
 }
 
 // SHAPES
 
 @mixin shape-x($size, $color) {
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		@include size(1px, $size);
+		@include position(absolute, 50%, 50%);
+		margin-top: $size / 2 * -1;
+		margin-right: $size / 2 * -1;
+		background: $color;
+	}
 
-    &:before,
-    &:after {
-        content: '';
-        display: block;
-        @include size(1px, $size);
-        @include position(absolute, 50%, 50%);
-        margin-top: $size / 2 * -1;
-        margin-right: $size / 2 * -1;
-        background: $color;
-    }
+	&:before {
+		@include rotate(45deg);
+	}
 
-    &:before {
-        @include rotate(45deg);
-    }
+	&:after {
+		@include rotate(-45deg);
+	}
 
-    &:after {
-        @include rotate(-45deg);
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-
-        &:before,
-        &:after {
-            background: lighten($color, 20%);
-        }
-    }
+	&:hover,
+	&:active,
+	&:focus {
+		&:before,
+		&:after {
+			background: lighten($color, 20%);
+		}
+	}
 }
 
 // GRAPHICS
 
 @mixin graph-percentage-bar-radial($size, $bar-thickness, $fill-color, $bar-color: $gray, $inset-color: $white) {
+	$inset-size: $size - $bar-thickness;
+	$increment: 180deg / 100;
 
-    $inset-size: $size - $bar-thickness;
-    $increment: 180deg / 100;
+	@include size($size);
+	background: $bar-color;
 
-    @include size($size);
-    background: $bar-color;
+	.circle {
+		.mask,
+		.fill {
+			@include size($size);
+		}
 
-    .circle {
+		.mask {
+			clip: rect(0px, $size, $size, $size / 2);
 
-        .mask,
-        .fill {
-            @include size($size);
-        }
+			.fill {
+				clip: rect(0px, $size / 2, $size, 0px);
+				background: $fill-color;
+			}
+		}
+	}
 
-        .mask {
-            clip: rect(0px, $size, $size, $size / 2);
-
-            .fill {
-                clip: rect(0px, $size / 2, $size, 0px);
-                background: $fill-color;
-            }
-        }
-    }
-
-    .inset {
-        @include size($inset-size);
-        top: ($size - $inset-size) / 2;
-        left: ($size - $inset-size) / 2;
-        background: $inset-color;
-    }
+	.inset {
+		@include size($inset-size);
+		top: ($size - $inset-size) / 2;
+		left: ($size - $inset-size) / 2;
+		background: $inset-color;
+	}
 }
